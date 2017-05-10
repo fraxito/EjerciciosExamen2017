@@ -57,14 +57,51 @@ public class EjerciciosExamen2017 {
         return p1.equals(p2);
     }
         
+    public void calendario(int n){
+        int posicion = 1; //variable que guarda la posición del 1 al 7 en la que estamos
+        n = n%7;  // si tengo más de 7, que imprima el numero correspondiente, que no haga otra linea de XX
+        
+        //imprime las XX iniciales
+        for (int i=0; i<n; i++){
+            System.out.print("XX ");
+            posicion++;
+        }
+        
+        //imprime los numeros del 01 al 31. Si posicion llega a 7, lo cambia a 0 e imprime una linea nueva
+        for (int i=1; i<=31; i++){
+            if (i<10){
+                System.out.print("0" + i + " ");
+            }
+            else {
+                System.out.print(i + " ");
+            }
+            if (posicion == 7){
+                 System.out.println();
+                 posicion = 0;
+            }
+            posicion++;
+        }
+        
+        //imprime las XX del final
+        for (int i=posicion; i<=7; i++){
+            System.out.print("XX ");
+        }        
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         EjerciciosExamen2017 ejercicio1 = new EjerciciosExamen2017();
         //System.out.println( ejercicio1.hasTeen(0, 0, 0) );
-        System.out.println( ejercicio1.palindromo("acaso hubo buhos aca") );
-        System.out.println( ejercicio1.palindromoMetodo2("acaso hubo buhos aca") );
+//        System.out.println( ejercicio1.palindromo("acaso hubo buhos aca") );
+//        System.out.println( ejercicio1.palindromoMetodo2("acaso hubo buhos aca") );
+        for (int i=0; i<=7; i++){ 
+            ejercicio1.calendario(i);
+            System.out.println();
+            System.out.println();
+        }
     }
     
 }

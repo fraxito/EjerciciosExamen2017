@@ -88,20 +88,49 @@ public class EjerciciosExamen2017 {
         }        
     }
     
+        public boolean escaleraPalabras(char[][] listaPalabras) {
+        int distintas;
+        for (int i = 0; i < listaPalabras.length - 1; i++) {
+            distintas = 0;
+            for (int j = 0; j < listaPalabras[0].length; j++) {
+                if (listaPalabras[i][j] != listaPalabras[i + 1][j]) {
+                    distintas++;
+                    if (distintas != 1) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        char[][] listaPalabras = {
+            {'P','A','T','A'},
+            {'P','A','T','O'},
+            {'R','A','T','O'},
+            {'G','A','T','O'}
+        };
         EjerciciosExamen2017 ejercicio1 = new EjerciciosExamen2017();
+        
+        System.out.println( ejercicio1.escaleraPalabras(listaPalabras) );
+        
+        
         //System.out.println( ejercicio1.hasTeen(0, 0, 0) );
 //        System.out.println( ejercicio1.palindromo("acaso hubo buhos aca") );
 //        System.out.println( ejercicio1.palindromoMetodo2("acaso hubo buhos aca") );
-        for (int i=0; i<=7; i++){ 
-            ejercicio1.calendario(i);
-            System.out.println();
-            System.out.println();
-        }
+//        for (int i=0; i<=7; i++){ 
+//            ejercicio1.calendario(i);
+//            System.out.println();
+//            System.out.println();
+//        }
     }
     
 }
+
+
+ 
